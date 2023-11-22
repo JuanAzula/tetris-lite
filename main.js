@@ -129,6 +129,50 @@ function draw () {
   $score.innerText = score
 }
 
+const UP = document.getElementById('up')
+const DOWN = document.getElementById('down')
+const LEFT = document.getElementById('left')
+const RIGHT = document.getElementById('right')
+
+document.addEventListener('click', function () {
+  LEFT.addEventListener('click', function () {
+    piece.position.x--
+    if (checkCollisions()) {
+      piece.position.x++
+    }
+  })
+  RIGHT.addEventListener('click', function () {
+    piece.position.x++
+    if (checkCollisions()) {
+      piece.position.x--
+    }
+  })
+  DOWN.addEventListener('click', function () {
+    piece.position.y++
+    if (checkCollisions()) {
+      piece.position.y--
+      solidifyPiece()
+      removeRows()
+    }
+  })
+  UP.addEventListener('click', function () {
+    const rotated = []
+
+    for (let i = 0; i < piece.shape[0].length; i++) {
+      const row = []
+      for (let j = piece.shape.length - 1; j >= 0; j--) {
+        row.push(piece.shape[j][i])
+      }
+      rotated.push(row)
+    }
+    const previousShape = piece.shape
+    piece.shape = rotated
+    if (checkCollisions()) {
+      piece.shape = previousShape
+    }
+  })
+})
+
 document.addEventListener('keydown', (event) => {
   if (event.code === EVENT_MOVEMENTS.LEFT) {
     piece.position.x--

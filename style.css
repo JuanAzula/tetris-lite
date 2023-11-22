@@ -12,7 +12,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 section {
   position: absolute;
   background: black;
@@ -21,7 +20,85 @@ section {
 body {
   margin: 0;
   display: grid;
-  padding:0;
+  padding: 0;
   place-content: center;
 }
+
+
+button {
+  font-size: 18px;
+  margin: 5px;
+}
+/* #app {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+/* .container{
+  display: flex;
+} */
+#controls {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* strong {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  } */
+  #controls {
+    display: flex;
+  }
+  #controls button {
+      width: 30px;
+  }
+  /* #down {
+    width: 30px;
+  } */
+  /* #controls {
+      position: static;
+      margin-top: 35%;
+      display: flex;
+      flex-direction: row;
+      height: 50px;
+    }
+  
+    #up {
+      position: absolute;
+      top: 72.4%;
+      left: 72%;
+      width: 35px;
+      /* Ajusta según sea necesario */
+      /* transform: translateX(-50%);
+    }
+  
+    #down {
+      position: absolute;
+      top: 95%;
+      left: 79%;
+      width: 35px;
+      /* Ajusta según sea necesario */
+      /* transform: translateX(-50%);
+    }
+  
+    #left {
+      position: absolute;
+      top: 78%;
+      left: 65%;
+      /* Ajusta aquí sea necesario */
+      /* transform: translateY(-50%);
+    }  */
+  
+    /* #right {
+      position: absolute;
+      top: 78%;
+      left: 74.6%;
+      /* Ajusta aquí sea necesario */
+      /* transform: translateY(-50%);
+    } */
+  
+}
+
+
 
