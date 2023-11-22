@@ -8,7 +8,7 @@ const context = canvas.getContext('2d')
 const $score = document.querySelector('#score')
 
 let score = 0
-const audio = new window.Audio('./my-nigga.mp3')
+const audio = new window.Audio('./Tetris.mp3')
 audio.volume = 0.5
 canvas.width = BLOCK_SIZE * BOARD_WIDTH
 canvas.height = BLOCK_SIZE * BOARD_HEIGHT
