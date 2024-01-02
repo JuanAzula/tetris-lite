@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Tetris</title>
 
-  <script type="module" crossorigin src="/assets/index-ySNPu6wh.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-dQURBVIG.css">
+  <script type="module" crossorigin src="/assets/index-tNmy8kGW.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-wjrtLRJN.css">
 </head>
 
 <body>
@@ -17,11 +17,50 @@
       <canvas></canvas>
       <strong>Puntuación: <span id="score"></span></strong>
       <div id="controls">
-        <button id="left">←</button>
-        <button id="down">↓</button>
-        <button id="right">→</button>
-        <button id="up">↻</button>
-        
+        <span class="buttons" id="left">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="36"
+            height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z" />
+          </svg>
+        </span>
+
+        <span class="buttons" id="down">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-down" width="36"
+            height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M15 4v8h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-8a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1z" />
+          </svg>
+        </span>
+
+        <span class="buttons" id="right">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right" width="36"
+            height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M4 9h8v-3.586a1 1 0 0 1 1.707 -.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586a1 1 0 0 1 -1.707 -.707v-3.586h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1z" />
+          </svg>
+        </span>
+
+        <span class="buttons" id="up">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rotate-2" width="36" height="36"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M15 4.55a8 8 0 0 0 -6 14.9m0 -4.45v5h-5" />
+            <path d="M18.37 7.16l0 .01" />
+            <path d="M13 19.94l0 .01" />
+            <path d="M16.84 18.37l0 .01" />
+            <path d="M19.37 15.1l0 .01" />
+            <path d="M19.94 11l0 .01" />
+          </svg>
+        </span>
+
       </div>
     </div>
   </div>
