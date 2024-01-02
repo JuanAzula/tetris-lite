@@ -12,6 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 section {
   position: absolute;
   background: black;
@@ -27,8 +28,10 @@ body {
 
 button {
   font-size: 18px;
-  margin: 5px;
+  height: 50px;
+  margin: 10px;
 }
+
 /* #app {
   display: flex;
     flex-direction: column;
@@ -42,6 +45,7 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+
   /* strong {
     position: absolute;
     top: 20%;
@@ -50,9 +54,11 @@ button {
   #controls {
     display: flex;
   }
+
   #controls button {
-      width: 30px;
+    width: 30px;
   }
+
   /* #down {
     width: 30px;
   } */
@@ -70,7 +76,7 @@ button {
       left: 72%;
       width: 35px;
       /* Ajusta según sea necesario */
-      /* transform: translateX(-50%);
+  /* transform: translateX(-50%);
     }
   
     #down {
@@ -79,7 +85,7 @@ button {
       left: 79%;
       width: 35px;
       /* Ajusta según sea necesario */
-      /* transform: translateX(-50%);
+  /* transform: translateX(-50%);
     }
   
     #left {
@@ -87,18 +93,15 @@ button {
       top: 78%;
       left: 65%;
       /* Ajusta aquí sea necesario */
-      /* transform: translateY(-50%);
+  /* transform: translateY(-50%);
     }  */
-  
-    /* #right {
+
+  /* #right {
       position: absolute;
       top: 78%;
       left: 74.6%;
       /* Ajusta aquí sea necesario */
-      /* transform: translateY(-50%);
+  /* transform: translateY(-50%);
     } */
-  
+
 }
-
-
-

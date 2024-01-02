@@ -18,7 +18,7 @@ context.scale(BLOCK_SIZE, BLOCK_SIZE)
 // 3. board
 const board = createBoard(BOARD_WIDTH, BOARD_HEIGHT)
 
-function createBoard (width, height) {
+function createBoard(width, height) {
   return Array(height).fill().map(() => Array(width).fill(0))
 }
 
@@ -64,7 +64,7 @@ const PIECES = [
   [[1, 1, 0],
   [0, 1, 1]],
   [[0, 0, 1],
-    [1, 1, 1]]
+  [1, 1, 1]]
 ]
 // 4. pieza player
 const piece = {
@@ -78,7 +78,7 @@ const piece = {
 // 3. auto drop
 let dropCounter = 0
 let lastTime = 0
-function update (time = 0) {
+function update(time = 0) {
   const deltaTime = time - lastTime
   lastTime = time
   dropCounter += deltaTime
@@ -105,7 +105,7 @@ function update (time = 0) {
   window.requestAnimationFrame(update)
 }
 
-function draw () {
+function draw() {
   context.fillStyle = 'black'
   context.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -134,43 +134,41 @@ const DOWN = document.getElementById('down')
 const LEFT = document.getElementById('left')
 const RIGHT = document.getElementById('right')
 
-document.addEventListener('click', function () {
-  LEFT.addEventListener('click', function () {
-    piece.position.x--
-    if (checkCollisions()) {
-      piece.position.x++
-    }
-  })
-  RIGHT.addEventListener('click', function () {
+LEFT.addEventListener('click', function () {
+  piece.position.x -= 1
+  if (checkCollisions()) {
     piece.position.x++
-    if (checkCollisions()) {
-      piece.position.x--
-    }
-  })
-  DOWN.addEventListener('click', function () {
-    piece.position.y++
-    if (checkCollisions()) {
-      piece.position.y--
-      solidifyPiece()
-      removeRows()
-    }
-  })
-  UP.addEventListener('click', function () {
-    const rotated = []
+  }
+})
+RIGHT.addEventListener('click', function () {
+  piece.position.x++
+  if (checkCollisions()) {
+    piece.position.x--
+  }
+})
+DOWN.addEventListener('click', function () {
+  piece.position.y++
+  if (checkCollisions()) {
+    piece.position.y--
+    solidifyPiece()
+    removeRows()
+  }
+})
+UP.addEventListener('click', function () {
+  const rotated = []
 
-    for (let i = 0; i < piece.shape[0].length; i++) {
-      const row = []
-      for (let j = piece.shape.length - 1; j >= 0; j--) {
-        row.push(piece.shape[j][i])
-      }
-      rotated.push(row)
+  for (let i = 0; i < piece.shape[0].length; i++) {
+    const row = []
+    for (let j = piece.shape.length - 1; j >= 0; j--) {
+      row.push(piece.shape[j][i])
     }
-    const previousShape = piece.shape
-    piece.shape = rotated
-    if (checkCollisions()) {
-      piece.shape = previousShape
-    }
-  })
+    rotated.push(row)
+  }
+  const previousShape = piece.shape
+  piece.shape = rotated
+  if (checkCollisions()) {
+    piece.shape = previousShape
+  }
 })
 
 document.addEventListener('keydown', (event) => {
@@ -212,7 +210,7 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
-function checkCollisions () {
+function checkCollisions() {
   return piece.shape.find((row, y) => {
     return row.find((value, x) => {
       return (
@@ -224,7 +222,7 @@ function checkCollisions () {
   })
 }
 
-function solidifyPiece () {
+function solidifyPiece() {
   piece.shape.forEach((row, y) => {
     row.forEach((value, x) => {
       if (value === 1) {
@@ -246,7 +244,7 @@ function solidifyPiece () {
   }
 }
 
-function removeRows () {
+function removeRows() {
   for (let y = 0; y < board.length; y++) {
     if (board[y].every((value) => value === 1)) {
       board.splice(y, 1)
